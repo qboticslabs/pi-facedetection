@@ -4,7 +4,6 @@ import config
 import picamera
 
 def detect_faces(image):
-    faces = []
     haar_faces = cv2.CascadeClassifier(config.HAAR_FACES)
     detected = haar_faces.detectMultiScale(image, scaleFactor=config.HAAR_SCALE_FACTOR, 
                 minNeighbors=config.HAAR_MIN_NEIGHBORS, 
