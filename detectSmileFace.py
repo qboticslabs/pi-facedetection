@@ -8,7 +8,7 @@ def detect(image, cascade):
     detected = haar_faces.detectMultiScale(image, scaleFactor=config.HAAR_SCALE_FACTOR, 
                 minNeighbors=config.HAAR_MIN_NEIGHBORS, 
                 minSize=config.HAAR_MIN_SIZE, 
-                flags=cv2.CASCADE_SCALE_IMAGE)
+                flags=cv2.CV_HAAR_SCALE_IMAGE)
     detected[:,2:] += detected[:,:2]
     return detected
 
