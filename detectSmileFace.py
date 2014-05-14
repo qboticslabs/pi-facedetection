@@ -21,7 +21,7 @@ if __name__ == "__main__":
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     gray = cv2.equalizeHist(gray)
 
-    faces = detect(image, config.HAAR_FACES)
+    faces = detect(gray, config.HAAR_FACES)
  
 
     if len(faces) != 0:
