@@ -27,13 +27,13 @@ if __name__ == "__main__":
     if len(faces) != 0:
         vis = image.copy()
         for (x,y,w,h) in faces:
-            cv2.rectangle(image, (x, y), (x+w, y+h),(0,255,0))
+            cv2.rectangle(vis, (x, y), (x+w, y+h),(0,255,0))
         for x1, y1, x2, y2 in faces:
             roi = gray[y1:y2, x1:x2]
             vis_roi = vis[y1:y2, x1:x2]
             smiles = detect(roi.copy(), config.HAAR_SMILES)
             for (x,y,w,h) in smiles:
-                cv2.rectangle(image, (x, y), (x+w, y+h), (255,0,0))
+                cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
 
         cv2.imwrite('detect.jpg', image)
     else:
