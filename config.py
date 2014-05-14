@@ -36,7 +36,7 @@ HAAR_SCALE_FACTOR  = 1.3
 HAAR_MIN_NEIGHBORS = 4
 HAAR_MIN_SIZE      = (30, 30)
 
-
+HAAR_SMILES        = 'haarcascade_smile.xml'
 #def get_camera():
 #    import picam
 #    return picam.OpenCVCapture()
