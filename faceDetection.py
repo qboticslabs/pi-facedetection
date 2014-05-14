@@ -1,5 +1,7 @@
+# A Sample Python program will capture photo from picamera and Create another image with Face Detection
+# Copyright 2014.  Sunny Cheung
+
 import cv2
-import cv2.cv as cv
 import config
 import picamera
 
