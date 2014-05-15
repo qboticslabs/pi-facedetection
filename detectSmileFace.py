@@ -33,9 +33,9 @@ if __name__ == "__main__":
         for x1, y1, x2, y2 in faces:
             roi = gray[y1:y2, x1:x2]
             vis_roi = vis[y1:y2, x1:x2]
-            mouth = detect(roi.copy(), config.HAAR_MOUTH)
+            mouths = detect(roi.copy(), config.HAAR_MOUTH)
 
-            for (x,y,w,h) in smiles:
+            for (x,y,w,h) in mouths:
                 cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
 
         cv2.imwrite('detect.jpg', vis_roi)
