@@ -35,6 +35,6 @@ if __name__ == "__main__":
             for (x,y,w,h) in smiles:
                 cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
 
-        cv2.imwrite('detect.jpg', image)
+        cv2.imwrite('detect.jpg', vis_roi)
     else:
         print 'No Face Detected'
