@@ -37,6 +37,7 @@ HAAR_MIN_NEIGHBORS = 4
 HAAR_MIN_SIZE      = (30, 30)
 
 HAAR_SMILES        = 'haarcascade_smile.xml'
+HAAR_MOUTH         = 'haarcascade_mcs_mouth.xml'
 #def get_camera():
 #    import picam
 #    return picam.OpenCVCapture()

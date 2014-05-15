@@ -9,6 +9,8 @@ def detect(image, cascade):
                 minNeighbors=config.HAAR_MIN_NEIGHBORS, 
                 minSize=config.HAAR_MIN_SIZE, 
                 flags=cv.CV_HAAR_SCALE_IMAGE)
+    if len(detected) == 0:
+        return []
     detected[:,2:] += detected[:,:2]
     return detected
 
@@ -31,7 +33,8 @@ if __name__ == "__main__":
         for x1, y1, x2, y2 in faces:
             roi = gray[y1:y2, x1:x2]
             vis_roi = vis[y1:y2, x1:x2]
-            smiles = detect(roi.copy(), config.HAAR_SMILES)
+            mouth = detect(roi.copy(), config.HAAR_MOUTH)
+
             for (x,y,w,h) in smiles:
                 cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
 
