@@ -40,7 +40,7 @@ if __name__ == "__main__":
             smiles = detect(sroi.copy(), config.HAAR_SMILES)
             if len(smiles) > 0:
                 print "You smile"
-            else 
+            else: 
                 print "No Smile"
             #for (x,y,w,h) in mouths:
             #    cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
