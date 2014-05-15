@@ -31,14 +31,14 @@ if __name__ == "__main__":
         for (x,y,w,h) in faces:
             cv2.rectangle(vis, (x, y), (x+w, y+h),(0,255,0))
         for x1, y1, x2, y2 in faces:
-            roi = gray[y1:y2, x1:x2]
+            #roi = gray[y1:y2, x1:x2]
             vis_roi = vis[y1:y2, x1:x2]
-            mouths = detect(roi.copy(), config.HAAR_MOUTH)
-	    (x,y,w,h) = mouths[0]
-            cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
+            mouths = detect(vis_roi.copy(), config.HAAR_MOUTH)
+	    #(x,y,w,h) = mouths[0]
+            #cv2.rectangle(vis_roi, (x, y), (x+w, y+h), (255,0,0))
 	    # mouth is detected, now I want to detect smile
             (xx1, yy1, xx2, yy2) = mouths[0]
-            sroi = roi[yy1:yy2, xx1:xx2]
+            sroi = vis_roi[yy1:yy2, xx1:xx2]
             cv2.imwrite('mouth.jpg', sroi)
             smiles = detect(sroi.copy(), config.HAAR_SMILES)
             if len(smiles) > 0:
